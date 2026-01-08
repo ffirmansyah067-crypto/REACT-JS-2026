@@ -1,0 +1,37 @@
+/* --- GAYA MOBILE-FIRST (Default untuk layar kecil) --- */
+.box {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px; /* Padding kecil untuk mobile */
+    text-align: center;
+    border-radius: 10px;
+    
+    /* Perubahan Tampilan Dinamis 1: Warna Latar Mobile */
+    background-color: #3498DB; /* Biru terang untuk mobile */
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+    font-weight: bold;
+}
+
+/* --- MEDIA QUERY untuk LAYAR LEBAR (Desktop) --- */
+@media (min-width: 768px) {
+    /* Hanya berlaku ketika lebar layar minimal 768px (Desktop/Tablet Besar) */
+    
+    .box {
+        width: 60%;
+        padding: 30px 50px; /* Padding lebih besar untuk desktop */
+        
+        /* Perubahan Tampilan Dinamis 2: Warna Latar Desktop */
+        background-color: #2ECC71; /* Hijau cerah untuk desktop */
+        color: #333; /* Teks gelap agar kontras dengan latar cerah */
+        font-size: 18px;
+    }
+
+    .text::before {
+        content: "Anda Sedang Melihat Tampilan DESKTOP. ";
+    }
+}

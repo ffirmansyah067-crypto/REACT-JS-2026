@@ -1,0 +1,31 @@
+/* Styling dasar untuk semua kotak peringatan */
+.alertBox {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-weight: bold;
+    border-left: 5px solid; /* Garis samping untuk penekanan */
+    transition: all 0.3s ease;
+}
+
+/* ----------------------------------- */
+/* Kelas untuk variasi warna (dynamic styles) */
+/* ----------------------------------- */
+
+.success {
+    background-color: #E6F7D6; /* Hijau muda */
+    color: #389E0F; /* Hijau tua */
+    border-color: #52C41A; /* Hijau solid */
+}
+
+.warning {
+    background-color: #FFFBE6; /* Kuning muda */
+    color: #FAAD14; /* Kuning tua */
+    border-color: #FFC53D; /* Kuning solid */
+}
+
+.error {
+    background-color: #FFF1F0; /* Merah muda */
+    color: #F5222D; /* Merah tua */
+    border-color: #FF4D4F; /* Merah solid */
+}
