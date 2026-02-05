@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.tsx
+import React from 'react'
+import Counter from './components/Counter'
+import UsersList from './components/UsersList'
+import { useAppDispatch, useAppSelector } from './app/hooks'
+import { addTodo, toggleTodo, removeTodo } from './features/todos/todosSlice'
+import TodosList from './components/TodoList'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const todos = useAppSelector((state) => state.todos.items)
+  const dispatch = useAppDispatch()
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div style={{ padding: '2rem' }}>
+      <h1>Redux Toolkit Demo</h1>
+
+      <section>
+        <h2>Counter</h2>
+        <Counter />
+      </section>
+
+      <section>
+        <UsersList />
+      </section>
+
+      <section>
+        <h2>Todos</h2>
+        <button onClick={() => dispatch(addTodo('Learn Redux Toolkit'))}>
+          Add Todo
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+        <ul>
+          {todos.map((t) => (
+            <li key={t.id}>
+              <span
+                style={{
+                  textDecoration: t.completed ? 'line-through' : 'none',
+                  cursor: 'pointer',
+                }}
+                onClick={() => dispatch(toggleTodo(t.id))}
+              >
+                {t.text}
+              </span>
+              <button onClick={() => dispatch(removeTodo(t.id))}>Remove</button>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <TodosList />
+    </div>
   )
 }
-
-export default App
