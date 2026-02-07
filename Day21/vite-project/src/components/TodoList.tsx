@@ -1,5 +1,5 @@
 // src/components/TodosList.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { addTodo, toggleTodo, removeTodo } from '../features/todos/todosSlice'
 

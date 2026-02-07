@@ -1,5 +1,4 @@
 // src/App.tsx
-import React from 'react'
 import Counter from './components/Counter'
 import UsersList from './components/UsersList'
 import { useAppDispatch, useAppSelector } from './app/hooks'

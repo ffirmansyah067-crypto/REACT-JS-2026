@@ -1,5 +1,5 @@
 // src/components/UsersList.tsx
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { fetchUsers, removeUser } from '../features/users/usersSlice'
 

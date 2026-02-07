@@ -1,5 +1,4 @@
 // src/components/Counter.tsx
-import React from 'react'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { increment, decrement, reset } from '../features/counter/counterSlice'
 
